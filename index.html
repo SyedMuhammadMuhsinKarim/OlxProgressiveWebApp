@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buy Sell Ads</title>
+    <!-- <link rel="stylesheet" href="stylesheets/bootstrap.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/navbar.css">
+    <link rel="stylesheet" href="stylesheets/posts.css">
+    <script src="javascript/logsession.js"></script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
+    <link rel="manifest" href="./img/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(function () { 
+                        console.log("Service Worker Registered");
+                    });
+            });
+        }
+    </script>
+</head>
+
+<body onload="logSession()">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">E-Classified</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul id="logcheck" class="nav navbar-nav navbar-right">
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="form-inline text-center">
+        <div class="form-group">
+            <select class="form-control container" onchange="searchByCategory()" id="category" name="category">
+                <option value="">Choose Category</option>
+                <option value="car">Cars</option>
+                <option value="mobile">Mobile Phones</option>
+                <option value="tablets">Tablets</option>
+                <option value="bike">Bike</option>
+                <option value="computers">Computers and laptops</option>
+                <option value="games">Cameras</option>
+                <option value="game">Games</option>
+                <option value="rent">Rent A House</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="search" onkeyup="searchByText()" class="form-control container" id="search" placeholder="search Ads...">
+        </div>
+        <button type="submit" onclick="searchByText()" class="btn btn-primary">
+            <span class="glyphicon glyphicon-search"></span> Search</button>
+    </div>
+
+    <div class="headings">
+        <h4>
+            <span>Recent Classified</span>
+        </h4>
+    </div>
+
+    <div id="post" class="posts rows"></div>
+    <!-- ===================== Firebase Starts Here ===================== -->
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-functions.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="javascript/firestore.js"></script>
+    <!-- ===================== Firebase Ends Here ===================== -->
+
+    <script src="javascript/app.js"></script>
+    <script src="javascript/logsession.js"></script>
+    <script src="javascript/getAds.js"></script>
+    <script src="javascript/favorite.js"></script>
+    <script src="javascript/chat.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Your Account</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="stylesheets/forms.css">
+
+    <!-- ===================== Firebase Starts Here ===================== -->
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="javascript/firestore.js"></script>
+    <!-- ===================== Firebase Ends Here ===================== -->
+
+    <script src="javascript/app.js"></script>
+    <!-- <script src="javascript/logsession1.js"></script> -->
+</head>
+
+<body>
+    <div class="container-fluid header">
+        <h2>Login To Account</h2>
+    </div>
+
+    <div class="container-fluid form">
+        <div class="container">
+            <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+        </div>
+
+        <div class="container">
+            <input type="password" name="password" id="pwd" placeholder="Choose password" required>
+        </div>
+
+        <div class="container">
+            <button type="submit" class="submitbtn" onclick="signIn()">Log In</button>
+            <span class="text-center">
+                <a href="#">Forget Password?</a>
+            </span>
+            <br>
+            <span class="text-center">Not register account yet please
+                <a href="Register.html">Sign Up</a>
+            </span>
+        </div>
+
+        <p class="text-center" style="color: red" id="errmsg"></p>
+    </div>
+</body>
+
+</html>

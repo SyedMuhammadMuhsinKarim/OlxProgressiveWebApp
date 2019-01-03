@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Submit Your Ads</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="stylesheets/bootstrap.css"> -->
+    <link rel="stylesheet" href="stylesheets/forms.css">
+    <link rel="stylesheet" href="stylesheets/navbar.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./index.html">E-Classified</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul id="logcheck" class="nav navbar-nav navbar-right">
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid header">
+        <h2>Submit Your Ads</h2>
+
+    </div>
+
+    <div class="container-fluid form">
+        <div class="container">
+            <input type="text" maxlength="30" name="productTitle" id="productTitle" required placeholder="Write Title of Your Product (max length is 30 letters)..."
+                required>
+        </div>
+
+        <div class="container">
+            <textarea style="resize: none;" required maxlength="150" name="productDiscription" id="productDiscription" cols="30" rows="5"
+                placeholder="write your product description (max length 150 letters)...."></textarea>
+        </div>
+
+        <div class="container">
+            <select name="Category" id="category" required>
+                <option value="car">Cars</option>
+                <option value="mobile">Mobile Phones</option>
+                <option value="tablets">Tablets</option>
+                <option value="bike">Bike</option>
+                <option value="computers">Computers and laptops</option>
+                <option value="games">Cameras</option>
+                <option value="game">Games</option>
+                <option value="rent">Rent A House</option>
+            </select>
+        </div>
+
+        <div class="container">
+            <input type="file" name="file" id="file" accept="image/*" placeholder="Select Image">
+        </div>
+
+        <div class="container">
+            <input type="number" placeholder="Year" name="year" id="year" maxlength="4">
+        </div>
+
+        <div class="container">
+            <input type="number" placeholder="Set Price..." name="price" id="price">
+        </div>
+
+        <div class="container">
+            <input type="text" placeholder="Model" name="model" id="model">
+        </div>
+
+        <div class="container">
+            <button type="submit" id="subbtn" class="submitbtn" onclick="SubmitAd()">Submit</button>
+        </div>
+        <div class="container text-center">
+            <span class="text-center" style="color: green" id='message'></span>
+            <span class="text-center" style="color: red" id='message-failure'></span>
+        </div>
+
+    </div>
+
+    </div>
+    <!-- ===================== Firebase Integration  ===================== -->
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-functions.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="javascript/firestore.js"></script>
+    <!-- ===================== Javascript Integration ===================== -->
+    <script src="javascript/app.js"></script>
+    <script src="javascript/logsession.js"></script>
+    <script src="javascript/adsdata.js"></script>
+</body>
+
+</html>
